@@ -8,7 +8,7 @@ import requests
 
 BASE_URL = "https://statsapi.web.nhl.com"
 
-# This header is used to tell the server that we need the results in a human
+# This header is used to tell the server that we need the results in a machine
 # readable format. Otherwise we might get HTML that we'll have trouble reading.
 DEFAULT_HEADERS = {"Accept": "application/json"}
 
