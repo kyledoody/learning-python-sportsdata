@@ -1,6 +1,7 @@
-# nfl
+# learning-python-sportsdata
 
 A Simple program for learning Python!
+Query data about the NHL!
 
 # Where to start?
 
