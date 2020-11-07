@@ -1,0 +1,6 @@
+# We need to run our program to test it. So include the runtime dependencies.
+-rrequirements.txt
+
+# This library is a testing framework for python!
+# See https://docs.pytest.org/en/stable/
+pytest
