@@ -1,6 +1,19 @@
-# We need to run our program to test it. So include the runtime dependencies.
+# We need to run our program to test it, so include the runtime dependencies.
 -rrequirements.txt
 
 # This library is a testing framework for python!
 # See https://docs.pytest.org/en/stable/
 pytest
+
+# This library allows mocking out HTTP requests that
+# use the requests library so you can test your code.
+# See https://requests-mock.readthedocs.io/en/latest/
+requests_mock
+
+# This library allows us to easily format the code nicely!
+# See https://github.com/psf/black
+black
+
+# This library allows to sort imports nicely!
+# See https://pypi.org/project/isort/
+isort

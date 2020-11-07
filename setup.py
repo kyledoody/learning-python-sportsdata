@@ -40,6 +40,7 @@ def parse_requirements(requirements_filename):
             if line.startswith("-r"):
 
                 # Trim off the dash -r using a "slice"
+                # Strip it again in case theres whitespace. eg "-r somefile.txt"
                 # See https://www.w3schools.com/python/ref_func_slice.asp
                 new_requirements_file = line[2:].strip()
 
@@ -62,15 +63,23 @@ def parse_requirements(requirements_filename):
 
 setup(
     # This is the name of our project.
-    name="nfl",
-
+    name="sportsdata",
     # These are the modules in our project.
     # See https://www.w3schools.com/python/python_modules.asp
-    packages=["nfl"],
-
+    packages=[
+        "sportsdata",
+        "sportsdata.nhl",
+        "sportsdata.scripts",
+    ],
     # These are the packages we need to run our program.
     install_requires=parse_requirements("requirements.txt"),
-
     # These are the packages we need to test our program.
-    tests_require=parse_requirements("requirements-dev.txt")
+    tests_require=parse_requirements("requirements-dev.txt"),
+    # When our package is installed, make a set of command line scripts for it!
+    # See https://stackoverflow.com/questions/774824/explain-python-entry-points
+    entry_points={
+        "console_scripts": [
+            "print-nhl-teams=sportsdata.scripts.print_nhl_teams:main",
+        ],
+    },
 )
