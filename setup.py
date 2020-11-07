@@ -40,7 +40,7 @@ def parse_requirements(requirements_filename):
             if line.startswith("-r"):
 
                 # Trim off the dash -r using a "slice"
-                # Strip it again in case theres whitespace. eg "-r somefile.txt"
+                # Strip it again in case theres whitespace. e.g. "-r somefile.txt"
                 # See https://www.w3schools.com/python/ref_func_slice.asp
                 new_requirements_file = line[2:].strip()
 
