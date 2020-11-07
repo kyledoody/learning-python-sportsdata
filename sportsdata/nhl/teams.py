@@ -94,3 +94,25 @@ def get_nhl_team_names():
     # Use a list comprehension to parse the results!
     # See https://www.programiz.com/python-programming/list-comprehension
     return [team["name"] for team in data["teams"]]
+
+def print_names_as_grid():
+    """
+    returns all team names as a formatted grid of 4 entries wide,
+    left justified with equal spacing
+    """
+
+    teamnames = get_nhl_team_names()
+
+    maxname = ""
+    for name in teamnames:
+        if len(name) > len(maxname):
+            maxname = name
+    width = len(maxname) + 2
+
+    for i, name in enumerate(teamnames):
+        if i < len(teamnames) - 1:
+            name = name + ","
+        name = name.ljust(width)
+        print(name, end="")
+        if i % 4 == 3:
+            print()
