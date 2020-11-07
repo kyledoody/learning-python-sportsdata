@@ -51,3 +51,18 @@ ______________________________________summary___________________________________
   py39: commands succeeded
   congratulations :)
 ```
+
+- Open PowerShell in admin mode and run `set-executionpolicy remotesigned`
+
+- Activate the virtual environment and try a script:
+
+```
+> .\.tox\py39\Scripts\activate
+(py39) > print-nhl-teams
+New Jersey Devils
+New York Islanders
+New York Rangers
+Philadelphia Flyers
+Pittsburgh Penguins
+...
+```
